@@ -1,6 +1,6 @@
 import { getCommunityData } from "@/lib/community";
 import { siteConfig } from "@/site.config";
-import { Container } from "@/components/ui/Container";
+import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { TextLink } from "@/components/ui/TextLink";
 
@@ -9,33 +9,39 @@ export function CommunityTeaser() {
   const recentActivities = community.activities.slice(0, 2);
 
   return (
-    <section className="py-14 sm:py-16">
-      <Container>
-        <SectionLabel>边缘计算社区</SectionLabel>
-        <div className="max-w-2xl">
-          <h2 className="text-2xl font-medium tracking-tight text-foreground">
+    <Section variant="alt">
+      <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+        <div>
+          <SectionLabel>边缘计算社区</SectionLabel>
+          <h2 className="font-serif text-2xl font-medium tracking-tight sm:text-3xl">
             {community.name}
           </h2>
-          <p className="mt-4 leading-relaxed text-muted">{community.mission}</p>
+          <p className="mt-5 leading-[1.85] text-muted">{community.mission}</p>
+          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+            <TextLink href="/community">了解社区</TextLink>
+            <TextLink href={siteConfig.links.community} external>
+              进入 byjs.com.cn
+            </TextLink>
+          </div>
         </div>
-        <ul className="mt-10 space-y-6 border-t border-border pt-10">
-          {recentActivities.map((activity) => (
-            <li key={activity.title}>
-              <p className="text-xs text-muted-light">{activity.date}</p>
-              <p className="mt-1 font-medium text-foreground">
+
+        <ul className="space-y-0 divide-y divide-border border-y border-border">
+          {recentActivities.map((activity, index) => (
+            <li key={activity.title} className="py-6 sm:py-7">
+              <p className="post-index">{String(index + 1).padStart(2, "0")}</p>
+              <p className="mt-2 font-mono text-xs text-muted-light">
+                {activity.date}
+              </p>
+              <p className="mt-2 font-medium text-foreground">
                 {activity.title}
               </p>
-              <p className="mt-1 text-sm text-muted">{activity.description}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {activity.description}
+              </p>
             </li>
           ))}
         </ul>
-        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
-          <TextLink href="/community">了解社区</TextLink>
-          <TextLink href={siteConfig.links.community} external>
-            进入 byjs.com.cn
-          </TextLink>
-        </div>
-      </Container>
-    </section>
+      </div>
+    </Section>
   );
 }

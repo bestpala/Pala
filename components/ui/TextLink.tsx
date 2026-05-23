@@ -7,6 +7,7 @@ type TextLinkProps = {
   children: React.ReactNode;
   className?: string;
   external?: boolean;
+  invert?: boolean;
 };
 
 export function TextLink({
@@ -14,9 +15,26 @@ export function TextLink({
   children,
   className = "",
   external,
+  invert,
 }: TextLinkProps) {
   const isExternal = external ?? isExternalUrl(href);
-  const classes = `inline-flex items-center gap-1 text-accent underline-offset-4 transition-colors hover:text-accent-hover hover:underline ${className}`;
+  const classes = `group inline-flex items-center gap-1 transition-colors ${
+    invert
+      ? "text-[#e8e8e4] hover:text-white"
+      : "text-accent hover:text-accent-soft"
+  } ${className}`;
+
+  const underline = (
+    <span
+      className={`border-b pb-px transition-colors ${
+        invert
+          ? "border-white/25 group-hover:border-white/60"
+          : "border-accent/30 group-hover:border-accent"
+      }`}
+    >
+      {children}
+    </span>
+  );
 
   if (isExternal) {
     return (
@@ -26,15 +44,15 @@ export function TextLink({
         rel="noopener noreferrer"
         className={classes}
       >
-        {children}
-        <ArrowUpRight className="h-3.5 w-3.5 shrink-0 opacity-70" />
+        {underline}
+        <ArrowUpRight className="h-3.5 w-3.5 shrink-0 opacity-60 transition-transform group-hover:-translate-y-px group-hover:translate-x-px" />
       </a>
     );
   }
 
   return (
     <Link href={href} className={classes}>
-      {children}
+      {underline}
     </Link>
   );
 }

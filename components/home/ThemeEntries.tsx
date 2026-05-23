@@ -1,30 +1,33 @@
 import { siteConfig } from "@/site.config";
-import { Container } from "@/components/ui/Container";
+import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export function ThemeEntries() {
   return (
-    <section className="py-14 sm:py-16">
-      <Container>
-        <SectionLabel>关注主题</SectionLabel>
-        <ul className="divide-y divide-border border-y border-border">
-          {siteConfig.themes.map((theme) => (
-            <li key={theme.slug}>
-              <Link
-                href={`/blog?tag=${theme.slug}`}
-                className="group flex items-center justify-between py-4 transition-colors"
-              >
-                <span className="text-base text-foreground group-hover:text-accent">
+    <Section>
+      <SectionLabel>关注主题</SectionLabel>
+      <ul className="grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2">
+        {siteConfig.themes.map((theme, index) => (
+          <li key={theme.slug} className="bg-surface">
+            <Link
+              href={`/blog?tag=${theme.slug}`}
+              className="group flex items-center justify-between px-5 py-5 transition-colors hover:bg-background-alt sm:px-6 sm:py-6"
+            >
+              <div className="flex items-baseline gap-4">
+                <span className="post-index">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="text-base text-foreground transition-colors group-hover:text-accent">
                   {theme.label}
                 </span>
-                <ArrowRight className="h-4 w-4 text-muted-light transition-transform group-hover:translate-x-0.5 group-hover:text-accent" />
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </Container>
-    </section>
+              </div>
+              <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-light transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </Section>
   );
 }

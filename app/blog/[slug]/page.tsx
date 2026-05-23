@@ -70,17 +70,17 @@ export default async function PostPage({ params }: PostPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <header className="border-b border-border py-16 sm:py-20">
+      <header className="border-b border-border bg-background-alt/40 py-16 sm:py-24">
         <Container narrow>
           <TextLink href="/blog" className="text-sm">
             ← 返回写作
           </TextLink>
-          <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-light">
+          <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs tracking-wide text-muted-light">
             <time dateTime={post.date}>{formatDate(post.date)}</time>
-            <span>·</span>
+            <span className="text-border-strong">·</span>
             <span>{post.readingTime}</span>
           </div>
-          <h1 className="mt-4 text-3xl font-medium leading-tight tracking-tight text-foreground sm:text-4xl">
+          <h1 className="mt-5 font-serif text-3xl font-medium leading-tight tracking-tight text-foreground sm:text-[2.5rem]">
             {post.title}
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-muted">

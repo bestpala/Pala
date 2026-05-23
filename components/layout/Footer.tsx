@@ -4,20 +4,24 @@ import { Container } from "@/components/ui/Container";
 import { TextLink } from "@/components/ui/TextLink";
 
 export function Footer() {
-  const { author, links, footerNav } = siteConfig;
+  const { author, links, footerNav, slogan } = siteConfig;
 
   return (
-    <footer className="mt-auto border-t border-border py-12">
-      <Container>
-        <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+    <footer className="mt-auto border-t border-border bg-invert text-[#e8e8e4]">
+      <Container wide className="py-14 sm:py-16">
+        <div className="grid gap-12 lg:grid-cols-[1.2fr_auto] lg:gap-20">
           <div>
-            <p className="text-sm font-medium text-foreground">
-              {author.name}
-              <span className="mx-2 text-muted-light">·</span>
-              {author.englishName}
+            <p className="font-serif text-2xl font-medium tracking-tight">
+              {slogan}
             </p>
-            <p className="mt-1 text-sm text-muted">{author.role}</p>
-            <p className="mt-3 text-xs text-muted-light">
+            <p className="mt-4 text-sm text-invert-muted">
+              {author.name}
+              <span className="mx-2 opacity-40">·</span>
+              {author.englishName}
+              <span className="mx-2 opacity-40">·</span>
+              {author.role}
+            </p>
+            <p className="mt-2 font-inter text-xs tracking-wide text-invert-muted">
               {siteConfig.url.replace("https://", "")}
             </p>
           </div>
@@ -27,7 +31,7 @@ export function Footer() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-muted transition-colors hover:text-foreground"
+                className="text-invert-muted transition-colors hover:text-white"
               >
                 {item.label}
               </Link>
@@ -35,26 +39,30 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-border pt-8 text-sm text-muted">
+        <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-invert-border pt-8 text-sm">
           {links.email && (
-            <TextLink href={`mailto:${links.email}`}>{links.email}</TextLink>
+            <TextLink href={`mailto:${links.email}`} invert>
+              {links.email}
+            </TextLink>
           )}
           {links.github && (
-            <TextLink href={links.github} external>
+            <TextLink href={links.github} external invert>
               GitHub
             </TextLink>
           )}
-          <TextLink href={links.rss}>RSS</TextLink>
-          <TextLink href={links.conference} external>
+          <TextLink href={links.rss} invert>
+            RSS
+          </TextLink>
+          <TextLink href={links.conference} external invert>
             全球边缘计算大会
           </TextLink>
-          <TextLink href={links.community} external>
+          <TextLink href={links.community} external invert>
             边缘计算社区
           </TextLink>
         </div>
 
-        <p className="mt-8 text-xs text-muted-light">
-          © {new Date().getFullYear()} {author.name}. {siteConfig.slogan}
+        <p className="mt-10 font-inter text-[11px] tracking-wide text-invert-muted">
+          © {new Date().getFullYear()} {author.name}
         </p>
       </Container>
     </footer>

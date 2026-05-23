@@ -1,5 +1,5 @@
 import { getFeaturedTimeline } from "@/lib/timeline";
-import { Container } from "@/components/ui/Container";
+import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { TextLink } from "@/components/ui/TextLink";
 import Link from "next/link";
@@ -16,38 +16,37 @@ export function TimelineTeaser() {
   const items = getFeaturedTimeline(6);
 
   return (
-    <section className="py-14 sm:py-16">
-      <Container>
-        <div className="mb-6 flex items-end justify-between gap-4">
-          <SectionLabel>时间线</SectionLabel>
-          <TextLink href="/archive" className="text-sm">
-            完整档案
-          </TextLink>
-        </div>
-        <ol className="relative border-l border-border pl-6">
-          {items.map((item) => (
-            <li key={`${item.year}-${item.title}`} className="pb-8 last:pb-0">
-              <span className="absolute -left-[5px] mt-1.5 h-2 w-2 rounded-full bg-border" />
-              <p className="text-xs tabular-nums text-muted-light">{item.year}</p>
-              {item.href ? (
-                <Link
-                  href={item.href}
-                  className="mt-1 block text-base font-medium text-foreground hover:text-accent"
-                >
-                  {item.title}
-                </Link>
-              ) : (
-                <p className="mt-1 text-base font-medium text-foreground">
-                  {item.title}
-                </p>
-              )}
-              <p className="mt-0.5 text-xs text-muted-light">
-                {typeLabels[item.type] ?? item.type}
+    <Section>
+      <div className="mb-8 flex items-end justify-between gap-4">
+        <SectionLabel className="mb-0">时间线</SectionLabel>
+        <TextLink href="/archive" className="text-sm">
+          完整档案
+        </TextLink>
+      </div>
+      <ol className="grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+        {items.map((item) => (
+          <li key={`${item.year}-${item.title}`} className="bg-surface p-6 sm:p-7">
+            <p className="font-mono text-xs tabular-nums tracking-widest text-muted-light">
+              {item.year}
+            </p>
+            {item.href ? (
+              <Link
+                href={item.href}
+                className="mt-3 block text-base font-medium leading-snug text-foreground transition-colors hover:text-accent"
+              >
+                {item.title}
+              </Link>
+            ) : (
+              <p className="mt-3 text-base font-medium leading-snug text-foreground">
+                {item.title}
               </p>
-            </li>
-          ))}
-        </ol>
-      </Container>
-    </section>
+            )}
+            <p className="mt-2 font-inter text-[11px] uppercase tracking-wider text-muted-light">
+              {typeLabels[item.type] ?? item.type}
+            </p>
+          </li>
+        ))}
+      </ol>
+    </Section>
   );
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans_SC, IBM_Plex_Mono } from "next/font/google";
+import { Inter, Noto_Sans_SC, Noto_Serif_SC, IBM_Plex_Mono } from "next/font/google";
 import { siteConfig } from "@/site.config";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -10,6 +10,13 @@ const notoSansSC = Noto_Sans_SC({
   variable: "--font-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const notoSerifSC = Noto_Serif_SC({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -62,7 +69,7 @@ export default function RootLayout({
   return (
     <html
       lang={siteConfig.locale}
-      className={`${notoSansSC.variable} ${inter.variable} ${ibmPlexMono.variable} h-full`}
+      className={`${notoSansSC.variable} ${notoSerifSC.variable} ${inter.variable} ${ibmPlexMono.variable} h-full`}
     >
       <body className="flex min-h-full flex-col font-sans antialiased">
         <PersonJsonLd />

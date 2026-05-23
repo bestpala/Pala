@@ -1,20 +1,16 @@
 import { siteConfig } from "@/site.config";
-import { Container } from "@/components/ui/Container";
+import { Section } from "@/components/ui/Section";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { Divider } from "@/components/ui/Divider";
 
 export function IdentityIntro() {
   return (
-    <section className="py-14 sm:py-16">
-      <Container>
-        <Divider />
-        <div className="pt-14">
-          <SectionLabel>关于我</SectionLabel>
-          <p className="max-w-2xl text-lg leading-relaxed text-muted">
-            {siteConfig.hero.intro}
-          </p>
-        </div>
-      </Container>
-    </section>
+    <Section variant="alt">
+      <div className="grid gap-8 lg:grid-cols-[200px_1fr] lg:gap-16">
+        <SectionLabel className="mb-0 lg:pt-1">关于我</SectionLabel>
+        <p className="text-lg leading-[1.85] text-muted sm:text-xl sm:leading-[1.8]">
+          {siteConfig.hero.intro}
+        </p>
+      </div>
+    </Section>
   );
 }
