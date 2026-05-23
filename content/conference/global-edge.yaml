@@ -1,0 +1,73 @@
+title: 全球边缘计算大会
+subtitle: Global Edge Computing Conference
+website: https://gecc.cn
+summary: >
+  面向边缘计算、云计算与 AI 基础设施的行业聚会，汇聚开发者、架构师与产业方，
+  讨论边缘智能、云边协同与基础设施演进。大会官网持续更新议程、嘉宾与历届资料。
+positioning: >
+  聚焦「基础设施走向边缘与真实场景」的交叉地带，强调全球视野、技术深度与产业连接，
+  区别于单一厂商发布会或纯学术会议，定位为行业共建型技术峰会。
+background: >
+  边缘计算从概念走向规模化部署，产业需要持续对话的平台：连接开源社区、云厂商、
+  设备商与行业用户。全球边缘计算大会在此背景下发起，旨在为生态提供可持续的
+  线下聚会与内容沉淀。
+themes:
+  - 边缘智能与推理下沉
+  - 云边协同与分布式架构
+  - AI Infra 与异构算力
+  - 开发者生态与开源实践
+  - 产业数字化与场景落地
+editions:
+  - year: 2024
+    theme: 边缘智能与基础设施演进
+    location: 中国
+  - year: 2023
+    theme: 云边协同与产业实践
+    location: 中国
+stats:
+  - label: 历届大会
+    value: 多届
+  - label: 技术议题
+    value: 50+
+  - label: 生态伙伴
+    value: 持续扩展
+speakers:
+  - name: 嘉宾示例
+    title: 架构师 / 技术负责人
+    topic: 边缘推理与云边协同实践
+  - name: 嘉宾示例
+    title: 社区 Maintainer
+    topic: 开源边缘框架与开发者生态
+partners:
+  - name: 合作伙伴（示例）
+    url: https://gecc.cn
+  - name: 技术社区
+    url: https://byjs.com.cn
+media:
+  - title: 大会相关报道（示例）
+    source: 行业媒体
+    url: https://gecc.cn
+assets:
+  - type: 官网
+    title: 全球边缘计算大会官网
+    url: https://gecc.cn
+  - type: 社区
+    title: 边缘计算社区
+    url: https://byjs.com.cn
+gallery: []
+myRole:
+  - title: 大会发起与主理
+    description: 负责大会整体定位、议题策划与生态资源整合，推动边缘计算行业对话平台建设。
+  - title: 议程与嘉宾
+    description: 参与核心议题设计，连接开发者、产业方与基础设施领域的技术专家。
+  - title: 内容资产沉淀
+    description: 推动演讲内容、社区讨论与后续文章复盘，形成可持续的行业记录。
+agenda:
+  - title: 主论坛
+    items:
+      - 边缘计算与 AI 基础设施趋势
+      - 云边协同架构实践
+  - title: 技术分论坛
+    items:
+      - 边缘推理与异构算力
+      - 开发者工具链与开源生态

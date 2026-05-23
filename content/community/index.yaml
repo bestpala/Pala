@@ -1,0 +1,41 @@
+name: 边缘计算社区
+website: https://byjs.com.cn
+mission: >
+  连接 practice 与 industry，持续组织技术活动、内容共建与生态协作，
+  让边缘计算从基础设施讨论走向真实场景落地。
+introduction: >
+  边缘计算社区（byjs.com.cn）是面向开发者与产业从业者的长期社区。
+  社区关注边缘计算、云计算、AI Infra 与开发者生态的交汇，通过线上内容、
+  线下活动与开源协作，降低技术扩散与产业共识的摩擦成本。
+focusAreas:
+  - 边缘计算与边缘智能
+  - 云边协同与分布式系统
+  - AI Infra 与推理基础设施
+  - 开发者工具链与开源生态
+  - 产业场景与基础设施观察
+activities:
+  - title: 技术沙龙与线上分享
+    date: 持续进行
+    description: 定期邀请开发者与架构师分享边缘与云边协同实践。
+    url: https://byjs.com.cn
+  - title: 大会复盘与专题讨论
+    date: 年度
+    description: 围绕全球边缘计算大会主题延续深度讨论与内容沉淀。
+    url: https://gecc.cn
+  - title: 内容共建栏目
+    date: 持续更新
+    description: 技术观察、行业解读与社区成员投稿。
+    url: https://byjs.com.cn
+columns:
+  - title: 技术观察
+    description: 边缘计算、AI Infra 与基础设施长期观察。
+  - title: 实践案例
+    description: 开发者与企业的云边协同落地复盘。
+  - title: 社区动态
+    description: 活动预告、纪要与合作信息。
+join: >
+  访问 byjs.com.cn 了解最新活动与加入方式。欢迎开发者、架构师、
+  技术社区运营者与产业从业者参与共建。
+collaboration: >
+  社区开放技术活动联办、内容栏目合作与生态资源对接。
+  合作事宜请通过本站联系页面沟通。

@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# pala.cn — 皓天个人品牌站
 
-## Getting Started
+**相信边缘的力量**
 
-First, run the development server:
+Next.js App Router · TypeScript · Tailwind CSS · MDX
+
+## 开发
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+访问 [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 内容维护
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| 类型 | 路径 |
+|------|------|
+| 站点配置 | `site.config.ts` |
+| 文章 | `content/posts/*.mdx` |
+| 作品 | `content/works/*.yaml` |
+| 项目 | `content/projects/*.yaml` |
+| 大会 | `content/conference/global-edge.yaml` |
+| 社区 | `content/community/index.yaml` |
+| 时间线 | `content/timeline.yaml` |
 
-## Learn More
+## 部署（Vercel）
 
-To learn more about Next.js, take a look at the following resources:
+1. 将仓库推送到 GitHub
+2. 在 Vercel 导入项目
+3. 绑定域名 `pala.cn`
+4. 环境变量（可选）：无必需项
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 外链
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 大会官网：https://gecc.cn
+- 边缘计算社区：https://byjs.com.cn
