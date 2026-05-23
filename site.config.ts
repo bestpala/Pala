@@ -13,12 +13,12 @@ export const siteConfig = {
     englishName: "Pala",
     role: "边缘计算社区负责人",
     email: "hello@pala.cn",
-    github: "",
+    github: "https://github.com/bestpala/Pala",
   },
 
   links: {
     email: "hello@pala.cn",
-    github: "",
+    github: "https://github.com/bestpala/Pala",
     rss: "/rss.xml",
     conference: "https://gecc.cn",
     community: "https://byjs.com.cn",

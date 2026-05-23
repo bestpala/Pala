@@ -15,7 +15,7 @@ cd C:\Users\pala\pala-site
 # 若已添加过错误的 remote，先删除：
 git remote remove origin
 
-git remote add origin https://github.com/YOUR_USERNAME/pala-site.git
+git remote add origin https://github.com/bestpala/Pala.git
 git push -u origin main
 ```
 
