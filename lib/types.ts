@@ -12,6 +12,7 @@ export type Post = {
 };
 
 export type WorkType =
+  | "brand"
   | "conference"
   | "community"
   | "content"
@@ -64,6 +65,7 @@ export type ArchiveEntry = {
 };
 
 export const workTypeLabels: Record<WorkType, string> = {
+  brand: "品牌传播",
   conference: "大会",
   community: "社区",
   content: "内容",

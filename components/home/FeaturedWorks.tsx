@@ -12,7 +12,7 @@ export function FeaturedWorks() {
   return (
     <Section variant="alt">
       <div className="mb-8 flex items-end justify-between gap-4">
-        <SectionLabel className="mb-0">代表作品</SectionLabel>
+        <SectionLabel className="mb-0">与岗位相关的代表作品</SectionLabel>
         <TextLink href="/works" className="text-sm">
           全部作品
         </TextLink>
@@ -21,7 +21,7 @@ export function FeaturedWorks() {
         {works.map((work, index) => (
           <li key={work.slug}>
             <Link
-              href="/works"
+              href={`/works#${work.slug}`}
               className="group grid gap-4 py-7 transition-colors sm:grid-cols-[4rem_1fr] sm:gap-8 sm:py-8"
             >
               <span className="post-index pt-1">
@@ -39,7 +39,10 @@ export function FeaturedWorks() {
                 <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">
                   {work.summary}
                 </p>
-                <p className="mt-2 text-xs text-muted-light">{work.role}</p>
+                <div className="mt-4 grid gap-2 text-sm sm:grid-cols-[9rem_1fr]">
+                  <p className="text-muted-light">我的职责 · {work.role}</p>
+                  <p className="leading-relaxed text-muted">{work.impact}</p>
+                </div>
               </div>
             </Link>
           </li>

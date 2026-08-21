@@ -13,9 +13,9 @@ export default function HomePage() {
     <>
       <Hero />
       <IdentityIntro />
-      <ThemeEntries />
-      <ConferenceHighlight />
       <FeaturedWorks />
+      <ConferenceHighlight />
+      <ThemeEntries />
       <RecentPosts />
       <CommunityTeaser />
       <TimelineTeaser />

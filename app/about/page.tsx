@@ -7,7 +7,7 @@ import { Divider } from "@/components/ui/Divider";
 
 export const metadata: Metadata = {
   title: "关于",
-  description: `${siteConfig.slogan}。皓天（Pala）— 边缘计算社区负责人，全球边缘计算大会主理人。`,
+  description: "史皓天的职业经历与能力概览，涵盖技术品牌传播、内容策划、市场活动与开发者社区运营。",
 };
 
 export default function AboutPage() {
@@ -17,13 +17,13 @@ export default function AboutPage() {
     <>
       <PageHeader
         title={`关于${author.name}`}
-        description={siteConfig.slogan}
+        description="7 年技术品牌、市场传播与开发者社区运营经验"
       />
 
       <Container narrow>
         <div className="prose max-w-none py-14 sm:py-16">
           <section>
-            <h2>我是谁</h2>
+            <h2>职业定位</h2>
             <p>
               我是{author.name}（{author.englishName}），{author.role}。
               {author.englishName} 是我的英文名，也是这个站的域名 pala.cn。
@@ -34,76 +34,68 @@ export default function AboutPage() {
           <Divider />
 
           <section>
-            <h2>为什么关注边缘计算</h2>
+            <h2>近期经历</h2>
             <p>
-              云计算把算力集中到极致之后，真实世界的问题又把人带向边缘：延迟、
-              隐私、离线、成本、场景化部署。边缘计算不是「云的对立面」，而是
-              基础设施自然延伸的一翼。
+              2024 年 9 月至 2026 年 6 月，我在北京青云科技负责 KubeSphere
+              开源项目的品牌传播与技术内容。工作覆盖品牌定位、内容栏目、城市沙龙与海外渠道。
             </p>
             <p>
-              我关注它，是因为这里同时有技术深度、产业变化与开发者生态的交汇——
-              值得被长期记录，而不只是一次性热点。
+              期间发布技术周刊 30 余期、双周报 10 余期，整体阅读量提升 30%。
+              我也组织了 4 场城市技术沙龙，连接 300 余名开发者，并推动 GitHub 发帖量增长 20%。
             </p>
           </section>
 
           <Divider />
 
           <section>
-            <h2>为什么做社区</h2>
+            <h2>长期项目</h2>
             <p>
-              技术扩散最快的方式，往往不是一篇官宣，而是一个能持续对话的结构。
-              社区降低的是协作摩擦：让实践者看见彼此，让产业方理解开发者，
-              让写作与活动形成可检索的时间档案。
+              2019 年至 2024 年，我联合创办边缘计算社区，从品牌定位、内容传播、
+              行业活动和合作资源开始，逐步建立 10 万余人规模的行业社区。
             </p>
             <p>
               <TextLink href={links.community} external>
                 边缘计算社区（byjs.com.cn）
               </TextLink>
-              是我投入最多的公共产品之一。
+              是这个项目持续公开的载体。
             </p>
           </section>
 
           <Divider />
 
           <section>
-            <h2>做过的重要事情</h2>
+            <h2>代表成果</h2>
             <ul>
               <li>
                 发起并主理{" "}
                 <TextLink href={links.conference} external>
                   全球边缘计算大会（gecc.cn）
                 </TextLink>
-                ，建设行业聚会与内容资产；
+                ，成功举办 9 届，累计参会 4500 余人；
               </li>
-              <li>负责边缘计算社区的长期运营与生态连接；</li>
-              <li>持续写作，记录边缘计算、AI Infra 与开发者生态观察；</li>
-              <li>通过 pala.cn 沉淀个人思想、项目与行业档案。</li>
+              <li>策划并出版《一本书读懂边缘计算》系列，累计销量破万册；</li>
+              <li>曾参与优云品牌从 0 到 1 建设，也负责过 ASO 行业的品牌内容与活动；</li>
+              <li>长期撰写技术传播、行业观察和产品市场内容。</li>
             </ul>
           </section>
 
           <Divider />
 
           <section>
-            <h2>现在关注什么</h2>
+            <h2>能承担的工作</h2>
             <ul>
-              <li>边缘推理下沉与 AI Infra 分工</li>
-              <li>云边协同与分布式系统实践</li>
-              <li>开发者工具链与开源生态</li>
-              <li>技术社区如何沉淀为基础设施</li>
+              <li>企业品牌定位、对外口径与品牌资料</li>
+              <li>产品卖点梳理、内容策划与传播方案</li>
+              <li>公众号、海外社交媒体与开发者社区运营</li>
+              <li>行业大会、技术沙龙、展会与市场活动支持</li>
             </ul>
           </section>
 
           <Divider />
 
           <section>
-            <h2>希望连接的人</h2>
-            <p>如果你属于以下任意一类，我很乐意建立连接：</p>
-            <ul>
-              <li>在边缘、云边协同或 AI Infra 一线实践的开发者与架构师；</li>
-              <li>建设技术社区、开发者生态的运营者与组织者；</li>
-              <li>关注基础设施演进的产业方与研究者；</li>
-              <li>愿意做深度内容、演讲与生态合作的朋友。</li>
-            </ul>
+            <h2>联系</h2>
+            <p>如果你正在招聘技术品牌、市场传播或内容运营岗位，欢迎通过邮件联系我。</p>
             <p className="mt-6">
               <TextLink href="/contact">联系我 →</TextLink>
               <span className="mx-2 text-muted-light">·</span>

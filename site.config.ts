@@ -1,17 +1,17 @@
 export const siteConfig = {
-  name: "皓天",
+  name: "史皓天",
   englishName: "Pala",
   slogan: "相信边缘的力量",
-  title: "皓天 · 相信边缘的力量",
+  title: "史皓天 · 技术品牌传播与市场运营",
   description:
-    "相信边缘的力量。边缘计算社区负责人皓天的长期记录：大会、社区、作品与技术写作。",
+    "史皓天的技术品牌作品集。7 年品牌传播、内容策划、市场活动与开发者社区运营经验。",
   url: "https://pala.cn",
   since: "2018",
 
   author: {
-    name: "皓天",
+    name: "史皓天",
     englishName: "Pala",
-    role: "边缘计算社区负责人",
+    role: "品牌宣传经理 · 技术品牌传播负责人",
     email: "hello@pala.cn",
     github: "https://github.com/bestpala/Pala",
   },
@@ -25,11 +25,11 @@ export const siteConfig = {
   },
 
   nav: [
+    { label: "作品", href: "/works" },
+    { label: "关于", href: "/about" },
     { label: "写作", href: "/blog" },
     { label: "大会", href: "/conference" },
-    { label: "作品", href: "/works" },
     { label: "社区", href: "/community" },
-    { label: "关于", href: "/about" },
     { label: "联系", href: "/contact" },
   ],
 
@@ -41,12 +41,19 @@ export const siteConfig = {
   ],
 
   hero: {
-    slogan: "相信边缘的力量",
+    slogan: "把复杂技术，讲成清晰、有传播力的品牌故事",
     tagline:
-      "这里记录我对边缘计算、技术社区、开发者生态与产业基础设施的长期观察。",
+      "7 年技术与硬科技品牌经验，覆盖品牌定位、产品传播、内容体系、行业活动与开发者社区运营。",
     intro:
-      "我是皓天，边缘计算社区负责人。相信边缘的力量——技术从云中心走向边缘与真实场景，产业与开发者也在边缘相遇。曾主理全球边缘计算大会，长期建设边缘计算社区，通过写作与项目留下可检索的行业档案。",
+      "我先后参与企业技术品牌从 0 到 1 建设、KubeSphere 开源项目品牌传播，并联合创办边缘计算社区。我的工作贯穿品牌表达、内容策划、活动落地与行业资源连接，既能搭建传播框架，也能持续完成具体内容。",
   },
+
+  proofPoints: [
+    { value: "7 年", label: "技术品牌与市场传播" },
+    { value: "30%", label: "KubeSphere 内容阅读量提升" },
+    { value: "9 届", label: "全球边缘计算大会" },
+    { value: "10 万+", label: "边缘计算行业社区" },
+  ],
 
   themes: [
     { label: "边缘计算", slug: "edge-computing" },
