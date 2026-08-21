@@ -1,28 +1,2 @@
-import type { Metadata } from "next";
-import { getAllWorks } from "@/lib/works";
-import { PageHeader } from "@/components/layout/PageHeader";
-import { Container } from "@/components/ui/Container";
-import { WorkList } from "@/components/works/WorkList";
-
-export const metadata: Metadata = {
-  title: "ä½œå“",
-  description: "å¤§ä¼šã€ç¤¾åŒºã€å†…å®¹ã€ç ”ç©¶ä¸åˆä½œçš„ä»£è¡¨ä½œæ¡£æ¡ˆã€‚",
-};
-
-export default function WorksPage() {
-  const works = getAllWorks();
-
-  return (
-    <>
-      <PageHeader
-        title="ä½œå“"
-        description="è¿‡å¾€é¡¹ç›®ã€æ´»åŠ¨ã€å†…å®¹ã€ç¤¾åŒºäº§å“ä¸ç ”ç©¶æŠ¥å‘Šâ€”â€”æŒ‰æ—¶é—´æ²‰æ·€çš„è¡Œä¸šæ¡£æ¡ˆã€‚"
-      />
-      <section className="py-14 sm:py-16">
-        <Container narrow>
-          <WorkList works={works} />
-        </Container>
-      </section>
-    </>
-  );
-}
+m«ëˆ§½©buªàºg§µªiÿ
++’Ïéj­³,j›jÇºà7an{¦Š)ßŠW¨¢ë_ŠW›n·š‘ºŞjG§r‡^v‹­¦ën¦)í¢X§zÊ•éà¶î˜7]yÊy×œ¡×¢›­†¥¥Ø¬¦V²¶¬™ë,j¢Šzn¶)éº×â•ç^}«¥µú+²×bŠ.¶›­¢ëiº×â•ç^}«¥µú+²×hº
