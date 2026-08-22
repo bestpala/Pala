@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/site.config";
 import { getAllPosts } from "@/lib/posts";
+import { getAllWorks } from "@/lib/works";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
@@ -9,8 +10,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/blog",
     "/conference",
-    "/works",
     "/projects",
+    "/topics",
+    "/now",
     "/community",
     "/about",
     "/archive",
@@ -29,5 +31,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...postRoutes];
+  const topicRoutes = siteConfig.themes.map((theme) => ({ url: `${baseUrl}/topics/${theme.slug}`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.7 }));
+  const projectRoutes = getAllWorks().map((work) => ({ url: `${baseUrl}/projects/${work.slug}`, lastModified: new Date(work.date), changeFrequency: "monthly" as const, priority: 0.7 }));
+
+  return [...staticRoutes, ...topicRoutes, ...projectRoutes, ...postRoutes];
 }

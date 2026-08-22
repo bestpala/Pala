@@ -22,6 +22,8 @@ export async function GET() {
       <link>${url}</link>
       <guid>${url}</guid>
       <description>${escapeXml(post.description)}</description>
+      <category>${escapeXml(post.topic)}</category>
+      <category>${escapeXml(post.format)}</category>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
     </item>`;
     })

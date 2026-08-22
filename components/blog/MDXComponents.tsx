@@ -1,11 +1,12 @@
 import type { MDXComponents } from "mdx/types";
 
 export const mdxComponents: MDXComponents = {
-  h2: (props) => (
+  h2: ({ children, ...props }) => (
     <h2
+      id={typeof children === "string" ? children.trim().toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "-").replace(/(^-|-$)/g, "") : undefined}
       className="mt-10 scroll-mt-24 text-xl font-semibold tracking-tight"
       {...props}
-    />
+    >{children}</h2>
   ),
   h3: (props) => (
     <h3 className="mt-8 text-lg font-semibold tracking-tight" {...props} />
@@ -46,4 +47,5 @@ export const mdxComponents: MDXComponents = {
     />
   ),
   hr: () => <hr className="my-10 border-border" />,
+  table: (props) => <div className="prose-table"><table {...props} /></div>,
 };

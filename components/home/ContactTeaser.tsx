@@ -7,18 +7,17 @@ export function ContactTeaser() {
   return (
     <Section variant="invert" className="contact-stage" containerClassName="max-w-6xl">
       <div className="contact-stage__meta font-mono">
-        <span>08 / NEXT MOVE</span>
-        <span>SHANGHAI / CHINA</span>
+        <span>KEEP THE CONVERSATION GOING</span>
+        <span>PALA.CN</span>
       </div>
-      <h2>LET’S BUILD<br /><span>THE NEXT SIGNAL.</span></h2>
+      <h2>IDEAS GROW<br /><span>IN CONVERSATION.</span></h2>
       <div className="contact-stage__bottom">
-        <p>如果你正在寻找懂技术、也懂品牌与内容落地的长期合作者，我们可以从一次具体的问题开始。</p>
+        <p>如果这里的某个问题也在困扰你，或者你想一起做内容、社区、访谈与品牌项目，欢迎从一封具体的邮件开始。</p>
         <div>
           <a href={`mailto:${siteConfig.links.email}`}>{siteConfig.links.email} <ArrowUpRight aria-hidden="true" /></a>
-          <Link href="/contact">查看合作方式</Link>
+          <Link href="/about">About Pala</Link>
         </div>
       </div>
     </Section>
   );
 }
-

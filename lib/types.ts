@@ -5,10 +5,24 @@ export type Post = {
   date: string;
   updated?: string;
   tags: string[];
+  topic: PostTopic;
+  format: PostFormat;
+  series?: string;
   featured?: boolean;
   draft?: boolean;
   content: string;
   readingTime: string;
+};
+
+export type PostTopic = "brand" | "technology" | "community" | "content" | "business";
+export type PostFormat = "essay" | "note" | "case" | "review" | "field-note" | "conversation";
+
+export const postTopicLabels: Record<PostTopic, string> = {
+  brand: "Brand", technology: "Technology", community: "Community", content: "Content", business: "Business",
+};
+
+export const postFormatLabels: Record<PostFormat, string> = {
+  essay: "Essay", note: "Note", case: "Case", review: "Review", "field-note": "Field Note", conversation: "Conversation",
 };
 
 export type WorkType =

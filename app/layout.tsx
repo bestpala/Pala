@@ -3,7 +3,7 @@ import { Inter, Noto_Sans_SC, Noto_Serif_SC, IBM_Plex_Mono } from "next/font/goo
 import { siteConfig } from "@/site.config";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { PersonJsonLd } from "@/components/seo/JsonLd";
+import { PersonJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
 import "./globals.css";
 
 const notoSansSC = Noto_Sans_SC({
@@ -53,8 +53,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
+    images: [siteConfig.defaultOgImage],
   },
   alternates: {
+    canonical: siteConfig.url,
     types: {
       "application/rss+xml": `${siteConfig.url}${siteConfig.links.rss}`,
     },
@@ -73,6 +75,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col font-sans antialiased">
         <PersonJsonLd />
+        <WebSiteJsonLd />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

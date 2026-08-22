@@ -1,59 +1,59 @@
 import Link from "next/link";
-import { ArrowDownRight, ArrowRight } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { siteConfig } from "@/site.config";
+import { getFeaturedPosts } from "@/lib/posts";
+import { formatDate } from "@/lib/utils";
 
-const disciplines = ["TECH BRAND", "AI INFRA", "EDGE COMPUTING"];
+const themes = ["Brand", "Technology", "Community", "Content", "Business"];
 
 export function Hero() {
-  const { author, hero, links, since } = siteConfig;
+  const [latest] = getFeaturedPosts(1);
 
   return (
-    <section className="control-hero" aria-labelledby="home-hero-title">
-      <div className="control-hero__grid" aria-hidden="true" />
-      <Container wide className="control-hero__inner">
-        <div className="control-hero__status font-mono">
-          <span>PALA / {since}—2026</span>
-          <span className="control-hero__signal"><i aria-hidden="true" /> BRAND SYSTEM ONLINE</span>
-          <span className="control-hero__coordinates">31.2304° N / 121.4737° E</span>
+    <section className="magazine-hero" aria-labelledby="magazine-hero-title">
+      <Container wide>
+        <div className="magazine-hero__issue font-mono">
+          <span>PALA.CN / AN INDEPENDENT JOURNAL</span>
+          <span>BRANDS · TECHNOLOGY · PEOPLE</span>
         </div>
 
-        <div className="control-hero__headline">
-          <p className="control-hero__kicker font-mono">BRAND OPERATOR FOR COMPLEX TECHNOLOGY</p>
-          <h1 id="home-hero-title">
-            <span>BUILDING</span>
-            <span className="control-hero__headline-row">TECH BRANDS <ArrowDownRight aria-hidden="true" /></span>
-          </h1>
-        </div>
+        <p className="magazine-hero__masthead" aria-hidden="true">PALA</p>
 
-        <div className="control-hero__lower">
-          <div className="control-hero__identity">
-            <p className="control-hero__monogram" aria-hidden="true">P</p>
-            <div>
-              <p className="control-hero__name">{author.name} <span>/ {author.englishName}</span></p>
-              <p className="control-hero__role">{author.role}</p>
-            </div>
+        <div className="magazine-hero__body">
+          <div className="magazine-hero__identity">
+            <p className="editorial-eyebrow font-mono">IDEAS / PROJECTS / FIELD NOTES</p>
+            <h1 id="magazine-hero-title">
+              Brands, technology,<br />
+              <em>and the people</em> who<br />
+              make them matter.
+            </h1>
+            <p>关于品牌如何在技术、商业与人之间建立认知、信任与长期关系。</p>
+            <Link href="/about">About Pala <ArrowDownRight aria-hidden="true" /></Link>
           </div>
 
-          <div className="control-hero__statement">
-            <p className="font-serif">{hero.slogan}</p>
-            <p>{hero.tagline}</p>
-            <div className="control-hero__actions">
-              <Link href="/works" className="control-button control-button--primary">查看代表作品 <ArrowRight aria-hidden="true" /></Link>
-              <Link href="/about" className="control-button">了解职业经历</Link>
-            </div>
-          </div>
+          {latest && (
+            <article className="magazine-hero__latest">
+              <div className="magazine-hero__latest-meta font-mono">
+                <span>LATEST THINKING</span>
+                <time dateTime={latest.date}>{formatDate(latest.date)}</time>
+              </div>
+              <h2><Link href={`/blog/${latest.slug}`}>{latest.title}</Link></h2>
+              <p>{latest.description}</p>
+              <Link href={`/blog/${latest.slug}`} className="magazine-hero__read">
+                READ THE ESSAY <ArrowUpRight aria-hidden="true" />
+              </Link>
+            </article>
+          )}
         </div>
 
-        <div className="control-hero__footer font-mono">
-          <div className="control-hero__disciplines" aria-label="专注领域">
-            {disciplines.map((item, index) => <span key={item}>{String(index + 1).padStart(2, "0")} {item}</span>)}
-          </div>
-          <div className="control-hero__links">
-            {links.email && <a href={`mailto:${links.email}`}>EMAIL ↗</a>}
-            {links.github && <a href={links.github} target="_blank" rel="noreferrer">GITHUB ↗</a>}
-          </div>
-        </div>
+        <nav className="magazine-hero__themes" aria-label="长期关注主题">
+          <span className="font-mono">EXPLORE</span>
+          {themes.map((theme, index) => (
+            <Link key={theme} href={`/blog?topic=${theme.toLowerCase()}`}>
+              <small className="font-mono">0{index + 1}</small>{theme}
+            </Link>
+          ))}
+        </nav>
       </Container>
     </section>
   );

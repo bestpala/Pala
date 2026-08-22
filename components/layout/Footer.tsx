@@ -11,16 +11,8 @@ export function Footer() {
       <Container wide className="py-14 sm:py-16">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_auto] lg:gap-20">
           <div>
-            <p className="font-serif text-2xl font-medium tracking-tight">
-              {slogan}
-            </p>
-            <p className="mt-4 text-sm text-invert-muted">
-              {author.name}
-              <span className="mx-2 opacity-40">·</span>
-              {author.englishName}
-              <span className="mx-2 opacity-40">·</span>
-              {author.role}
-            </p>
+            <p className="font-serif text-3xl font-medium tracking-tight">PALA</p>
+            <p className="mt-4 max-w-xl text-sm leading-7 text-invert-muted">{slogan}。一份由 {author.name} 持续更新的个人刊物。</p>
             <p className="mt-2 font-inter text-xs tracking-wide text-invert-muted">
               {siteConfig.url.replace("https://", "")}
             </p>
@@ -53,16 +45,12 @@ export function Footer() {
           <TextLink href={links.rss} invert>
             RSS
           </TextLink>
-          <TextLink href={links.conference} external invert>
-            全球边缘计算大会
-          </TextLink>
-          <TextLink href={links.community} external invert>
-            边缘计算社区
-          </TextLink>
+          <TextLink href={links.conference} external invert>GECC</TextLink>
+          <TextLink href={links.community} external invert>Edge Community</TextLink>
         </div>
 
         <p className="mt-10 font-inter text-[11px] tracking-wide text-invert-muted">
-          © {new Date().getFullYear()} {author.name}
+          © {new Date().getFullYear()} {author.name} · Built as a living archive
         </p>
       </Container>
     </footer>
