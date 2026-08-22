@@ -1,47 +1,40 @@
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { getCommunityData } from "@/lib/community";
 import { siteConfig } from "@/site.config";
 import { Section } from "@/components/ui/Section";
-import { SectionLabel } from "@/components/ui/SectionLabel";
-import { TextLink } from "@/components/ui/TextLink";
 
 export function CommunityTeaser() {
   const community = getCommunityData();
-  const recentActivities = community.activities.slice(0, 2);
+  const activities = community.activities.slice(0, 2);
 
   return (
-    <Section variant="alt">
-      <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-        <div>
-          <SectionLabel>边缘计算社区</SectionLabel>
-          <h2 className="font-serif text-2xl font-medium tracking-tight sm:text-3xl">
-            {community.name}
-          </h2>
-          <p className="mt-5 leading-[1.85] text-muted">{community.mission}</p>
-          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
-            <TextLink href="/community">了解社区</TextLink>
-            <TextLink href={siteConfig.links.community} external>
-              进入 byjs.com.cn
-            </TextLink>
+    <Section className="community-panel" containerClassName="max-w-6xl">
+      <div className="community-panel__header">
+        <p className="editorial-eyebrow font-mono">05 / COMMUNITY</p>
+        <p className="community-panel__count font-inter">100K<span>+</span></p>
+        <p className="font-mono">MEMBERS / BUILDERS / PARTNERS</p>
+      </div>
+      <div className="community-panel__layout">
+        <div className="community-panel__intro">
+          <h2>{community.name}</h2>
+          <p>{community.mission}</p>
+          <div>
+            <Link href="/community">了解社区 <ArrowUpRight aria-hidden="true" /></Link>
+            <a href={siteConfig.links.community} target="_blank" rel="noreferrer">BYJS.COM.CN <ArrowUpRight aria-hidden="true" /></a>
           </div>
         </div>
-
-        <ul className="space-y-0 divide-y divide-border border-y border-border">
-          {recentActivities.map((activity, index) => (
-            <li key={activity.title} className="py-6 sm:py-7">
-              <p className="post-index">{String(index + 1).padStart(2, "0")}</p>
-              <p className="mt-2 font-mono text-xs text-muted-light">
-                {activity.date}
-              </p>
-              <p className="mt-2 font-medium text-foreground">
-                {activity.title}
-              </p>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
-                {activity.description}
-              </p>
+        <ol className="community-panel__activity">
+          {activities.map((activity, index) => (
+            <li key={activity.title}>
+              <div><span className="font-mono">0{index + 1}</span><time className="font-mono">{activity.date}</time></div>
+              <h3>{activity.title}</h3>
+              <p>{activity.description}</p>
             </li>
           ))}
-        </ul>
+        </ol>
       </div>
     </Section>
   );
 }
+
