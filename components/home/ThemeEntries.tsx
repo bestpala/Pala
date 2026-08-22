@@ -7,15 +7,15 @@ export function ThemeEntries() {
   return (
     <Section variant="alt" className="signal-matrix" containerClassName="max-w-6xl">
       <div className="signal-matrix__heading">
-        <p className="editorial-eyebrow font-mono">06 / SIGNAL MATRIX</p>
-        <h2>长期关注的<br />技术与产业信号</h2>
+        <p className="editorial-eyebrow font-mono">WHAT I EXPLORE</p>
+        <h2>五个持续追问的<br />主题</h2>
       </div>
       <ul>
         {siteConfig.themes.map((theme, index) => (
           <li key={theme.slug}>
-            <Link href={`/blog?tag=${theme.slug}`}>
+            <Link href={`/topics/${theme.slug}`}>
               <span className="font-mono">{String(index + 1).padStart(2, "0")}</span>
-              <strong>{theme.label}</strong>
+              <strong>{theme.label}</strong><small>{theme.description}</small>
               <ArrowUpRight aria-hidden="true" />
             </Link>
           </li>
@@ -24,4 +24,3 @@ export function ThemeEntries() {
     </Section>
   );
 }
-

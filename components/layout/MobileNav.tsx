@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/site.config";
 
 export function MobileNav() {
@@ -54,31 +54,31 @@ export function MobileNav() {
       <button
         ref={triggerRef}
         type="button"
-        className="mobile-nav__trigger font-mono"
+        className="mobile-nav__trigger"
         aria-expanded={open}
         aria-controls="mobile-site-menu"
         onClick={() => setOpen((value) => !value)}
       >
-        MENU <span aria-hidden="true">{open ? "×" : "+"}</span>
+        <span>{open ? "Close" : "Menu"}</span>
+        {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
       </button>
 
       {open && (
         <div ref={panelRef} id="mobile-site-menu" className="mobile-nav__panel" role="dialog" aria-modal="true" aria-label="网站导航">
           <div className="mobile-nav__top">
-            <span className="font-mono">PALA / NAVIGATION</span>
+            <span className="font-serif">PALA</span>
             <button type="button" onClick={() => setOpen(false)} aria-label="关闭导航"><X aria-hidden="true" /></button>
           </div>
           <nav aria-label="移动端主导航">
             {siteConfig.nav.map((item, index) => (
               <Link key={item.href} href={item.href} ref={index === 0 ? firstLinkRef : undefined} onClick={() => setOpen(false)}>
-                <span className="font-mono">{String(index + 1).padStart(2, "0")}</span>
                 {item.label}
               </Link>
             ))}
           </nav>
-          <div className="mobile-nav__foot font-mono">
-            <a href={`mailto:${siteConfig.links.email}`}>EMAIL ↗</a>
-            <span>SHANGHAI / CHINA</span>
+          <div className="mobile-nav__foot">
+            <a href={`mailto:${siteConfig.links.email}`}>Email</a>
+            <span>Brands · Technology · People</span>
           </div>
         </div>
       )}

@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
-import type { Post } from "./types";
+import type { Post, PostFormat, PostTopic } from "./types";
 import { sortByDateDesc } from "./utils";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
@@ -22,14 +22,18 @@ function parsePost(slug: string): Post {
   const fileContents = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(fileContents);
   const stats = readingTime(content);
+  const normalizeDate = (value: unknown) => value instanceof Date ? value.toISOString().slice(0, 10) : String(value);
 
   return {
     slug: realSlug,
     title: data.title as string,
     description: data.description as string,
-    date: data.date as string,
-    updated: data.updated as string | undefined,
+    date: normalizeDate(data.date),
+    updated: data.updated ? normalizeDate(data.updated) : undefined,
     tags: (data.tags as string[]) ?? [],
+    topic: (data.topic as PostTopic | undefined) ?? "technology",
+    format: (data.format as PostFormat | undefined) ?? "essay",
+    series: data.series as string | undefined,
     featured: data.featured as boolean | undefined,
     draft: data.draft as boolean | undefined,
     content,
@@ -56,6 +60,14 @@ export function getPostBySlug(slug: string): Post | undefined {
 
 export function getPostsByTag(tag: string): Post[] {
   return getAllPosts().filter((post) => post.tags.includes(tag));
+}
+
+export function getPostsByTopic(topic: string): Post[] {
+  return getAllPosts().filter((post) => post.topic === topic);
+}
+
+export function getPostsByFormat(format: string): Post[] {
+  return getAllPosts().filter((post) => post.format === format);
 }
 
 export function getFeaturedPosts(limit = 6): Post[] {

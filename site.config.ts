@@ -1,17 +1,16 @@
 export const siteConfig = {
-  name: "史皓天",
+  name: "PALA",
   englishName: "Pala",
-  slogan: "相信边缘的力量",
-  title: "史皓天 · 技术品牌传播与市场运营",
-  description:
-    "史皓天的技术品牌作品集。7 年品牌传播、内容策划、市场活动与开发者社区运营经验。",
+  slogan: "Brands, Technology & People",
+  title: "PALA — Brands, Technology & People",
+  description: "一份关于品牌如何在技术、商业与人之间建立认知与信任的长期个人刊物。",
   url: "https://pala.cn",
   since: "2018",
 
   author: {
     name: "史皓天",
     englishName: "Pala",
-    role: "品牌宣传经理 · 技术品牌传播负责人",
+    role: "品牌实践者、内容创作者与社区 Builder",
     email: "hello@pala.cn",
     github: "https://github.com/bestpala/Pala",
   },
@@ -25,72 +24,52 @@ export const siteConfig = {
   },
 
   nav: [
-    { label: "作品", href: "/works" },
-    { label: "关于", href: "/about" },
-    { label: "写作", href: "/blog" },
-    { label: "大会", href: "/conference" },
-    { label: "社区", href: "/community" },
-    { label: "联系", href: "/contact" },
+    { label: "Writing", href: "/blog" },
+    { label: "Topics", href: "/topics" },
+    { label: "Projects", href: "/projects" },
+    { label: "Now", href: "/now" },
+    { label: "About", href: "/about" },
+    { label: "Search", href: "/search" },
   ],
 
   footerNav: [
-    { label: "项目", href: "/projects" },
-    { label: "档案", href: "/archive" },
-    { label: "写作", href: "/blog" },
-    { label: "联系", href: "/contact" },
+    { label: "Writing", href: "/blog" },
+    { label: "Topics", href: "/topics" },
+    { label: "Projects", href: "/projects" },
+    { label: "Archive", href: "/archive" },
+    { label: "Now", href: "/now" },
+    { label: "About", href: "/about" },
   ],
 
   hero: {
-    slogan: "把复杂技术，讲成清晰、有传播力的品牌故事",
-    tagline:
-      "7 年技术与硬科技品牌经验，覆盖品牌定位、产品传播、内容体系、行业活动与开发者社区运营。",
-    intro:
-      "我先后参与企业技术品牌从 0 到 1 建设、KubeSphere 开源项目品牌传播，并联合创办边缘计算社区。我的工作贯穿品牌表达、内容策划、活动落地与行业资源连接，既能搭建传播框架，也能持续完成具体内容。",
+    slogan: "Brands, technology, and the people who make them matter.",
+    tagline: "品牌不只是一套表达。它是在技术、商业与人之间，持续建立认知与信任的过程。",
+    intro: "这里记录我对品牌、技术、内容、社区与商业的长期观察，也保存那些把想法变成项目的现场经验。",
   },
 
   proofPoints: [
-    { value: "7 年", label: "技术品牌与市场传播" },
-    { value: "30%", label: "KubeSphere 内容阅读量提升" },
-    { value: "9 届", label: "全球边缘计算大会" },
-    { value: "10 万+", label: "边缘计算行业社区" },
+    { value: "To C", label: "从消费者品牌理解体验与选择" },
+    { value: "To B", label: "从技术品牌理解产品与信任" },
+    { value: "Community", label: "从社区实践理解关系与共同语言" },
   ],
 
   themes: [
-    { label: "边缘计算", slug: "edge-computing" },
-    { label: "云计算", slug: "cloud" },
-    { label: "AI Infra", slug: "ai-infra" },
-    { label: "开发者生态", slug: "developer-ecosystem" },
-    { label: "技术社区", slug: "community" },
-    { label: "行业观察", slug: "industry" },
-    { label: "产品思考", slug: "product" },
-    { label: "创业与组织", slug: "organization" },
+    { label: "Brand", slug: "brand", description: "品牌如何建立认知、记忆与长期资产。" },
+    { label: "Technology", slug: "technology", description: "技术趋势背后的产品、商业与信任问题。" },
+    { label: "Community", slug: "community", description: "社区如何降低摩擦、形成关系与共同语言。" },
+    { label: "Content", slug: "content", description: "内容如何从一次传播变成可复用的品牌资产。" },
+    { label: "Business", slug: "business", description: "公司、产品、增长、组织与市场的长期观察。" },
   ],
 
   contactScenarios: [
-    {
-      title: "演讲邀请",
-      description: "边缘计算、AI Infra、技术社区与产业基础设施相关主题。",
-    },
-    {
-      title: "社区共建",
-      description: "边缘计算社区活动、内容栏目与生态协作。",
-    },
-    {
-      title: "媒体采访",
-      description: "行业观察、大会与社区建设相关报道。",
-    },
-    {
-      title: "内容转载",
-      description: "请通过邮件联系，注明出处与原文链接。",
-    },
-    {
-      title: "产业合作",
-      description: "大会、社区、研究内容与生态合作洽谈。",
-    },
+    { title: "内容与采访", description: "品牌、技术、社区与产业相关的采访、写作和内容合作。" },
+    { title: "社区共建", description: "行业社区、内容栏目、线下活动与生态协作。" },
+    { title: "分享与对谈", description: "围绕品牌传播、技术社区和行业活动的经验分享。" },
+    { title: "项目合作", description: "品牌叙事、内容体系与行业项目的合作讨论。" },
   ],
 
   locale: "zh-CN",
-  defaultOgImage: "/og/default.png",
+  defaultOgImage: "/og.png",
 } as const;
 
 export type SiteConfig = typeof siteConfig;

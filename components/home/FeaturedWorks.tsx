@@ -12,14 +12,14 @@ export function FeaturedWorks() {
     <Section className="work-showcase" containerClassName="max-w-6xl">
       <div className="editorial-heading">
         <div>
-          <p className="editorial-eyebrow font-mono">02 / SELECTED WORK</p>
-          <h2>复杂技术的<br />品牌化实践</h2>
+          <p className="editorial-eyebrow font-mono">SELECTED PROJECTS</p>
+          <h2>把想法带到<br />真实世界</h2>
         </div>
-        <Link href="/works" className="editorial-index-link">全部作品 <ArrowUpRight aria-hidden="true" /></Link>
+        <Link href="/projects" className="editorial-index-link">View all projects <ArrowUpRight aria-hidden="true" /></Link>
       </div>
 
       {leadWork && (
-        <Link href={`/works#${leadWork.slug}`} className="lead-case">
+        <Link href={`/projects/${leadWork.slug}`} className="lead-case">
           <div className="lead-case__visual" aria-hidden="true">
             <span className="font-mono">CASE / 01</span>
             <strong>KS</strong>
@@ -28,7 +28,7 @@ export function FeaturedWorks() {
           <div className="lead-case__content">
             <div className="lead-case__meta font-mono">
               <span>{formatDate(leadWork.date)}</span>
-              <span>{workTypeLabels[leadWork.type]}</span>
+              <span>{workTypeLabels[leadWork.type]} · PROJECT STORY</span>
             </div>
             <h3>{leadWork.title}</h3>
             <p className="lead-case__summary">{leadWork.summary}</p>
@@ -36,7 +36,7 @@ export function FeaturedWorks() {
               <div><dt>ROLE</dt><dd>{leadWork.role}</dd></div>
               <div><dt>IMPACT</dt><dd>{leadWork.impact}</dd></div>
             </dl>
-            <span className="lead-case__action">VIEW CASE <ArrowUpRight aria-hidden="true" /></span>
+            <span className="lead-case__action">READ THE STORY <ArrowUpRight aria-hidden="true" /></span>
           </div>
         </Link>
       )}
@@ -44,7 +44,7 @@ export function FeaturedWorks() {
       <ol className="case-index">
         {otherWorks.map((work, index) => (
           <li key={work.slug}>
-            <Link href={`/works#${work.slug}`}>
+            <Link href={`/projects/${work.slug}`}>
               <span className="case-index__number font-mono">0{index + 2}</span>
               <div className="case-index__title">
                 <span className="font-mono">{workTypeLabels[work.type]} / {formatDate(work.date)}</span>
@@ -60,4 +60,3 @@ export function FeaturedWorks() {
     </Section>
   );
 }
-

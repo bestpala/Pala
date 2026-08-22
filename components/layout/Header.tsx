@@ -10,14 +10,12 @@ export function Header() {
         <div className="site-header__inner">
           <Link href="/" className="site-header__brand">
             <span>{siteConfig.name}</span>
-            <i aria-hidden="true" />
-            <span>{siteConfig.slogan}</span>
+            <span className="site-header__edition">A PERSONAL MAGAZINE</span>
           </Link>
 
           <nav className="site-header__desktop" aria-label="主导航">
-            {siteConfig.nav.map((item, index) => (
+            {siteConfig.nav.map((item) => (
               <Link key={item.href} href={item.href}>
-                <span className="font-mono">{String(index + 1).padStart(2, "0")}</span>
                 {item.label}
               </Link>
             ))}
@@ -29,4 +27,3 @@ export function Header() {
     </header>
   );
 }
-
